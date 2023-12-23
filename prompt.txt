@@ -1,0 +1,20 @@
+use python,
+read "https://www.myntra.com/shirts-for-men?rawQuery=shirts%20for%20men" the url and parse it with beutifulsoup
+
+
+find all li class="product-base"
+
+for each div from above list,
+try find img with class="img-responsive" then link = img.src
+except link = ''
+
+try find h3 with class="product-brand" then 
+title = span.textexcept title = ''
+
+try find span with class="product-discountedPrice" then price=span.text
+except price=''
+
+try find span with class="product-strike" then mrp = span.text
+except mrp = ''
+
+store data in amazon_data.csv using pandas library
